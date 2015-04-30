@@ -6,8 +6,28 @@
 	<screen name="CommonPracticeDecorator">
 		<section>
 			<widgets>
-				<include-menu location="component://practice/widget/PracticeMenus.xml" name="PracticeAppBar"/>
-				<decorator-section-include name="body"/>
+				<decorator-screen name="main-decorator">
+	                <decorator-section name="body">
+	                	<include-menu location="component://practice/widget/PracticeMenus.xml" name="PracticeAppBar"/>
+	                    <decorator-section-include name="body"/>
+	                </decorator-section>
+                </decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	
+	<screen name="main-decorator">
+		<section>
+			<actions>
+				<property-map map-name="uiLabelMap" resource="CommonUiLabels" global="true"/>
+				<property-map map-name="uiLabelMap" resource="PracticeUiLabels" global="true"/>
+				<set field="layoutSettings.companyName" from-field="uiLabelMap.PracticeCompanyName" global="true"/>
+                <set field="activeApp" value="practice" global="true"/>
+                <set field="applicationMenuName" value="PracticeAppBar" global="true"/>
+                <set field="applicationMenuLocation" value="component://practice/widget/PracticeMenus.xml" global="true"/>
+			</actions>
+			<widgets>
+				<include-screen name="GlobalDecorator" location="component://common/widget/CommonScreens.xml" />
 			</widgets>
 		</section>
 	</screen>

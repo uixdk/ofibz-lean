@@ -13,7 +13,7 @@
 				</section>
 				<section>
 					<widgets>
-						<label>你好世界</label>
+						<label text="This is first practice" />
 					</widgets>
 				</section>
 			</widgets>

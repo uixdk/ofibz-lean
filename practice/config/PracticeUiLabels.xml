@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+	<property key="PracticeApplication">
+	    <value xml:lang="en">This is first practice</value>
+	    <value xml:lang="zh">第一个练习</value>
+	</property>
+	<property key="PracticeCompanyName">
+	    <value xml:lang="en">OFBiz: Practice</value>
+	    <value xml:lang="zh">OFBiz: 练习</value>
+	</property>
+</resource>
