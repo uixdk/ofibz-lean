@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+	
+	<screen name="main">
+		<section>
+			<widgets>
+				<section>
+					<widgets>
+						<label style="h1">Hello World!</label>
+					</widgets>
+				</section>
+				<section>
+					<widgets>
+						<label>你好世界</label>
+					</widgets>
+				</section>
+			</widgets>
+		</section>
+	</screen>
+	
+	<screen name="person">
+		<section>
+			<actions>
+				<script location="component://practice/webapp/practice/WEB-INF/actions/Person.groovy"/>
+			</actions>
+			<widgets>
+				<decorator-screen name="CommonPracticeDecorator" location="${parameters.commonDecoratorLocation}">
+					<decorator-section name="body">
+						<platform-specific>
+							<html>
+								<html-template location="component://practice/webapp/practice/Person.ftl"/>
+							</html>
+						</platform-specific>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	
+	<screen name="PersonForm">
+		<section>
+			<actions>
+				<set field="heaederItem" value="personForm" />
+				<set field="titleProperty" value="PageTitlePracticePersonForm" />
+				<entity-condition list="persons" entity-name="Person"></entity-condition>			
+			</actions>
+			<widgets>
+				<decorator-screen name="CommonPracticeDecorator" location="${parameters.commonDecoratorLocation}">
+					<decorator-section name="body">
+                        <label text="Person List" style="h2"/>
+                        <include-form name="ListPersons" location="component://practice/widget/PracticeForms.xml"></include-form>
+                    </decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+		
+	</screen>
+</screens>

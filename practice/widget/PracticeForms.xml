@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+	<form name="ListPersons" type="list" list-name="persons" list-entry-name="person"  default-map-name="person" paginate-target="personForm">
+	     <!-- Important: Here service definition for updatePracticePerson has been used for automatically rendering the form fields, which you can use after completing CRUD operations from Part-3 -->
+	     <!-- auto-fields-service service-name="updatePracticePerson" default-field-type="display" map-name="person"/-->
+	 
+	     <!-- The above method can be used in case a service specific form is being rendered, otherwise form-fields can be explicitly mentioned as given below:-->
+	     <field name="firstName"><display/></field>
+	     <field name="middleName" ><display/> </field>
+	     <field name="lastName" ><display/> </field>
+	</form>
+</forms>
